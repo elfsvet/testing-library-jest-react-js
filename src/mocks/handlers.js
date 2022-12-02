@@ -12,5 +12,4 @@ export const handlers = [
       ])
     );
   }),
-  rest.post(),
 ];
