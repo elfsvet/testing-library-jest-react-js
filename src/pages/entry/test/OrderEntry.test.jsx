@@ -1,4 +1,8 @@
-import { render, screen, waitFor } from '../../../test-utils/testing-library-utils';
+import {
+  render,
+  screen,
+  waitFor,
+} from '../../../test-utils/testing-library-utils';
 
 import OrderEntry from '../OrderEntry';
 
@@ -16,8 +20,8 @@ test('Handles error for scoops and toppings routes', async () => {
     )
   );
 
-  render(<OrderEntry />);
-//    if we have more then one element return from server call in the RaceCondition we want to make sure we returned all of them before running tests. use waitFor with await and async function inside.
+  render(<OrderEntry setOrderPhase={jest.fn()} />);
+  //    if we have more then one element return from server call in the RaceCondition we want to make sure we returned all of them before running tests. use waitFor with await and async function inside.
   await waitFor(async () => {
     const alerts = await screen.findAllByRole('alert');
     // !same way but by checking the text because bootstrap react alert don't have name in it.
